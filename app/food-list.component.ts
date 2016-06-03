@@ -14,9 +14,5 @@ import { Food } from './food.model';
 })
 
 export class FoodListComponent {
-  public foodList: Food[];
-
-  constructor() {
-  }
 
 }
