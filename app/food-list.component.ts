@@ -19,8 +19,13 @@ import { NewFoodComponent } from './new-food.component';
   </div>
   <div class="row">
     <food-display *ngFor="#currentFood of foodList | health:filterLevel"
-    [food]="currentFood">
+    [food]="currentFood"
+    (click)="foodClicked(currentFood)"
+    [class.selected]="currentFood === selectedFood">
     </food-display>
+  </div>
+  <div class="row">
+    <edit-food *ngIf="selectedFood" [food]="selectedFood">Food Was Selected Placeholder</edit-food>
   </div>
   <div class="row">
     <new-food (onSubmitNewFood)="createFood($event)"></new-food>
@@ -30,6 +35,7 @@ import { NewFoodComponent } from './new-food.component';
 
 export class FoodListComponent {
   public foodList: Food[];
+  public selectedFood: Food;
   public filterLevel: String = "all";
 
   onChange(filterOption): void {
@@ -38,5 +44,9 @@ export class FoodListComponent {
 
   createFood(newFood: Food): void {
     this.foodList.push(newFood);
+  }
+
+  foodClicked(foodClicked: Food): void {
+    this.selectedFood = foodClicked;
   }
 }

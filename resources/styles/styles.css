@@ -5,3 +5,7 @@ body {
 p {
   font-size: 1.2em;
 }
+
+.selected {
+  color: #5BB75B;
+}

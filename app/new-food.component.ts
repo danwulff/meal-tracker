@@ -10,7 +10,7 @@ import {Food} from './food.model';
     <input placeholder="Name" class="input-lg" style="width: 50%" #newName /><br>
     <input placeholder="Details" class="input-lg" style="width: 50%" #newDetails /><br>
     <input placeholder="Calories" class="input-lg" style="width: 50%" #newCalories /><br>
-    <button (click)="addFood(newName, newDetails, newCalories)" class="btn-success btn-lg">Submit</button>
+    <button (click)="addFood(newName, newDetails, newCalories)" class="btn-primary btn-lg">Submit</button>
   </form>
   `
 })
