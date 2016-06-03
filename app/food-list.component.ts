@@ -3,12 +3,13 @@ import { FoodComponent } from './food.component';
 import { Food } from './food.model';
 import { HealthyFoodPipe } from './healthy-food.pipe';
 import { NewFoodComponent } from './new-food.component';
+import { EditFoodComponent } from './edit-food.component';
 
 @Component({
   selector: 'food-list',
   inputs: ['foodList'],
   pipes: [HealthyFoodPipe],
-  directives: [FoodComponent, NewFoodComponent],
+  directives: [FoodComponent, NewFoodComponent, EditFoodComponent],
   template: `
   <div class="row">
     <select (change)="onChange($event.target.value)">
@@ -25,7 +26,7 @@ import { NewFoodComponent } from './new-food.component';
     </food-display>
   </div>
   <div class="row">
-    <edit-food *ngIf="selectedFood" [food]="selectedFood">Food Was Selected Placeholder</edit-food>
+    <edit-food *ngIf="selectedFood" [food]="selectedFood"></edit-food>
   </div>
   <div class="row">
     <new-food (onSubmitNewFood)="createFood($event)"></new-food>

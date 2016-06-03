@@ -21,8 +21,10 @@ export class NewFoodComponent {
     this.onSubmitNewFood = new EventEmitter();
   }
   addFood(newName: HTMLInputElement, newDetails: HTMLInputElement, newCalories: HTMLInputElement){
+    //create food object
     var food = new Food(newName.value, newDetails.value, parseInt(newCalories.value));
 
+    //emit food object to list
     this.onSubmitNewFood.emit(food);
 
     //clear forms
