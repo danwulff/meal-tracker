@@ -17,10 +17,6 @@ import { Food } from './food.model';
 export class AppComponent {
   public foods: Food[];
   constructor() {
-    this.foods = [
-      new Food("Banana", "They're tropical yo", 100),
-      new Food("Apple", "Washington's finest", 120),
-      new Food("Jumbo Milkshake", "Load the carbs", 1200)
-    ];
+    this.foods = [];
   }
 }
